@@ -84,7 +84,7 @@ namespace AHLVBShop.API.Controllers
         [HttpGet("/GetRequest/{requestId}")]
         public async Task<IActionResult> GetRequest(Guid requestId)
         {
-            Request Request = await _requestService.GetAsync(x=>x.Id == requestId);
+            Request Request = await _requestService.GetAsync(x=>x.Id == requestId,"Product","Employee");
             if (Request == null)
             {
                 return NotFound(Sonuc<RequestDTOResponse>.SuccessNoDataFound());

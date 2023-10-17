@@ -27,7 +27,7 @@ namespace AHLVBShop.API.Middleware
         public async Task InvokeAsync(HttpContext httpContext)
         {
 
-            if (httpContext.Request.Path != null && httpContext.Request.Path != "/LoginEmployee" && httpContext.Request.Path != "/LoginUser")
+            if (httpContext.Request.Path != null && httpContext.Request.Path != "/LoginEmployee" && httpContext.Request.Path != "/LoginUser" && httpContext.Request.Path != "/Register")
             {
                 var handler = new JwtSecurityTokenHandler();
 

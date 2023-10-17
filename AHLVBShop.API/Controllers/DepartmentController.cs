@@ -92,7 +92,7 @@ namespace AHLVBShop.API.Controllers
         [HttpGet("/Department/{departmentId}")]
         public async Task<IActionResult> GetDepartment(Guid departmentId)
         {
-            Department department = await _departmentService.GetAsync(x=>x.Id == departmentId);
+            Department department = await _departmentService.GetAsync(x=>x.Id == departmentId,"Company");
             if(department == null)
             {
                 return NotFound(Sonuc<DepartmentDTOResponse>.SuccessNoDataFound());
